@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@durak-game/durak-dts':
+        specifier: ^0.5.1
+        version: 0.5.1
+
+packages:
+
+  '@durak-game/durak-dts@0.5.1':
+    resolution: {integrity: sha512-LQcqa1uQVxYLmDL1e1xwpcA2SrbQ27HC9x5RgJfOYbAkacbGqY+TSkCuKdJKtBdG5/+xcPTUWTSLtIDFxb74Ng==}
+
+snapshots:
+
+  '@durak-game/durak-dts@0.5.1': {}
