@@ -271,98 +271,10 @@ const findGreaterSameSuitNonTrumpCardFor =
 const findLowerSameSuitNonTrumpCardFor =
   findLowerSameSuitCardsFor(nonTrumpCards);
 
-const forAttacker = (desk: Desk) => ({
-  includesCardWithRank: (rank) => desk.ranks.includes(rank),
-});
-
-class DeskRanks {
-  constructor(private readonly deskSlotsValues: readonly IDeskSlot[]) {}
-
-  values() {
-    return new Set(
-      this.deskSlotsValues
-        .map((slot) => slot.toJSON())
-        .flatMap((cards) => [cards.attackCard, cards.defendCard])
-        .filter((card) => card !== undefined)
-        .map((card) => card.rank),
-    );
-  }
-}
-
-class AttackableDesk implements IDesk {
-  readonly #ranks: {
-    values(): Set<CardDTO["rank"]>;
-  };
-
-  readonly #slots: DeskSlots;
-
-  constructor(slots: DeskSlots) {
-    this.#slots = slots;
-    this.#ranks = new DeskRanks(slots.values);
-  }
-
-  get size() {
-    return this.#slots.values.length;
-  }
-
-  with(card: ICard) {
-    const rank = card.toJSON().rank;
-    const ranks = this.#ranks.values();
-    if (!ranks.has(rank)) {
-      throw new Error(
-        `Can not insert card with rank=${rank}, allowed values are ${[...ranks].join(", ")}`,
-      );
-    }
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const _this = this;
-    return {
-      at(slotId: string) {
-        return new Desk(_this.#slots.with((slot) => slot.id === slotId, card));
-      },
-    };
-  }
-
-  toJSON(): { slots: unknown[] } {
-    throw new Error("Method not implemented.");
-  }
-}
-
-const forDefender = (card, slotId, desk) =>
-  desk
-    .at((slot) => slot.id === slotId)
-    .ensureIsUnbeaten()
-    .then((slot) => slot.canBeBeatenWith(card));
-
 const makeDesk = ({ size = 6 }: { size: number }) =>
   new Desk(
     new DeskSlots(Array.from({ length: size }, (_, i) => new EmptySlot(i))),
   );
-
-interface DeskCard {}
-
-class AttackCard implements ICard, DeskCard {
-  type = "attack";
-
-  constructor(private readonly origin: GameCard) {}
-
-  place(desk: Desk) {}
-}
-
-class TransferCard implements ICard, DeskCard {
-  type = "transfer";
-
-  constructor(private readonly origin: GameCard) {}
-
-  place(desk: Desk) {}
-}
-
-class DefenseCard implements ICard, DeskCard {
-  type = "defense";
-
-  constructor(private readonly origin: GameCard) {}
-
-  place(desk: Desk) {}
-}
 
 interface IIdentifiableSlot extends IDeskSlot {
   id: string;
@@ -372,10 +284,6 @@ interface CanMakePlaceCardMoveForSlottableCard {
     card: () => ICard;
     at: (slot: IIdentifiableSlot) => boolean;
   };
-}
-
-interface CanMakePlaceCardMoveForSlottableCard2 {
-  for(desk: IDesk): IDesk;
 }
 
 abstract class DeskMove {
@@ -397,7 +305,7 @@ class SlotAttack
     super();
   }
 
-  forDesk(_desk: IDesk2) {
+  forDesk() {
     return {
       card: () => this.card,
       at: (slot: IIdentifiableSlot) => slot.id === this.slotId,
@@ -405,7 +313,7 @@ class SlotAttack
   }
 
   for(_desk: IDesk2) {
-    return this.forDesk(_desk);
+    return this.forDesk();
   }
 }
 
@@ -457,29 +365,6 @@ const transferFor =
   <T extends string>(slotId: SlotId<T>) =>
   (card: ICard) =>
     new Transfer(slotId, card);
-
-class CanBeUpdatedWithMove implements IDesk2 {
-  constructor(private readonly _origin: IDesk2) {}
-
-  get size(): number {
-    throw new Error("Method not implemented.");
-  }
-
-  toJSON(): { slots: unknown[] } {
-    throw new Error("Method not implemented.");
-  }
-
-  with(card: ICard) {
-    return this._origin.with(card);
-  }
-
-  with2(...args: [DeskMove] | Parameters<typeof this._origin.with>) {
-    if (args[0] instanceof DeskMove) {
-      args[0] = args[0].for(this._origin);
-    }
-    return this._origin.with2(...args);
-  }
-}
 
 describe("desk", () => {
   describe("with non trump attack card", () => {
