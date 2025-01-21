@@ -73,7 +73,7 @@ export default function setupCards() {
 // TODO: should refactor code that uses it, should use declarative methods
 export const __cards__ = setupCards();
 
-class Cards<T extends GameCard = GameCard> {
+export class Cards<T extends GameCard = GameCard> {
   readonly #values: readonly T[];
 
   constructor(values: readonly T[]) {
@@ -107,9 +107,13 @@ class Cards<T extends GameCard = GameCard> {
   }
 }
 
-export const trumpCards = new Cards(Object.values(__cards__.trumpCards));
+export const allTrumpCards = Object.values(__cards__.trumpCards);
 
-export const nonTrumpCards = new Cards(Object.values(__cards__.nonTrumpCards));
+export const trumpCards = new Cards(allTrumpCards);
+
+export const allNonTrumpCards = Object.values(__cards__.nonTrumpCards);
+
+export const nonTrumpCards = new Cards(allNonTrumpCards);
 
 export const sameSuitHigherRankFor = (cards: Cards) => (cardToTest: GameCard) =>
   cards
