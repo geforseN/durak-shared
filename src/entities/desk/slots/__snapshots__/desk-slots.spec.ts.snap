@@ -1,0 +1,127 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > same suit and higher rank: 'A♠' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > same suit and higher rank: 'A♠' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > same suit and higher rank: 'Q♠' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > same suit and higher rank: 'Q♠' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > same suit and higher rank: 'Q♠' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > same suit and higher rank: 'Q♠' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > same suit and higher rank: 'Q♠' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '2♣' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '2♣' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '2♣' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '2♣' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '2♣' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '3♦' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '3♦' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '3♦' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '3♦' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '3♦' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '5♥' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '5♥' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '5♥' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '5♥' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '5♥' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '6♠' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '6♠' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '6♠' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '6♠' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '6♠' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '7♣' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '7♣' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '7♣' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '7♣' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '7♣' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '8♦' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '8♦' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '8♦' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '8♦' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '8♦' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '10♥' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '10♥' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '10♥' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '10♥' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: '10♥' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'A♣' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'A♣' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'J♠' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'J♠' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'J♠' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'J♠' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'J♠' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'K♦' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'K♦' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'K♦' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'K♦' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'K♦' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'Q♣' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'Q♣' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'Q♣' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'Q♣' 4`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is plain' '7♠' > must become beaten with > trump card: 'Q♣' 5`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is trump' '10♠' > must become beaten with > same suit and higher rank: 'A♠' 1`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is trump' '10♠' > must become beaten with > same suit and higher rank: 'A♠' 2`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is trump' '10♠' > must become beaten with > same suit and higher rank: 'A♠' 3`] = `true`;
+
+exports[`desk slot > unbeaten > 'attack card is trump' '10♠' > must become beaten with > same suit and higher rank: 'A♠' 4`] = `true`;
