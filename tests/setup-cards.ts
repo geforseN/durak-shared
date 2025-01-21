@@ -70,51 +70,8 @@ export default function setupCards() {
   };
 }
 
-// type FindRanks = (rank: { toString(): CardDTO["rank"] }) => CardDTO["rank"][];
-
-// function findGreaterRanksFor(rank: { toString(): CardDTO["rank"] }) {
-//   return ranks.slice(ranks.indexOf(rank.toString()));
-// }
-
-// function findLowerRanksFor(rank: { toString(): CardDTO["rank"] }) {
-//   return ranks.slice(0, ranks.indexOf(rank.toString()));
-// }
-
-// const makeCardFind =
-//   (findRanks: FindRanks) =>
-//   (cards: Record<`${CardDTO["rank"]}${CardDTO["suit"]}`, GameCard>) =>
-//   (card: GameCard): GameCard[] => {
-//     const suit = card.suit.toString();
-//     const ranks = findRanks(card.rank);
-
-//     const keysToFind = ranks.map((rank) => `${rank}${suit}` as const);
-
-//     const allKeys = Object.keys(
-//       cards,
-//     ) as `${CardDTO["rank"]}${CardDTO["suit"]}`[];
-//     return allKeys
-//       .filter((key) => keysToFind.includes(key))
-//       .map((key) => cards[key]);
-//   };
-
-// export const findGreaterSameSuitCardsFor = makeCardFind(
-//   findGreaterRanksFor satisfies FindRanks,
-// );
-
-// export const findLowerSameSuitCardsFor = makeCardFind(
-//   findLowerRanksFor satisfies FindRanks,
-// );
-
 // TODO: should refactor code that uses it, should use declarative methods
 export const __cards__ = setupCards();
-
-// export const findGreaterSameSuitNonTrumpCardFor = findGreaterSameSuitCardsFor(
-//   __cards__.nonTrumpCards,
-// );
-
-// export const findLowerSameSuitNonTrumpCardFor = findLowerSameSuitCardsFor(
-//   __cards__.nonTrumpCards,
-// );
 
 class Cards<T extends GameCard = GameCard> {
   readonly #values: readonly T[];
@@ -165,6 +122,3 @@ export const sameSuitLowerRankFor = (cards: Cards) => (cardToTest: GameCard) =>
     .withSuit(cardToTest.suit)
     .withRankThatLowerThan(cardToTest.rank)
     .toArray();
-
-
-    
