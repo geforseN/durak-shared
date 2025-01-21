@@ -1,5 +1,16 @@
 {
+  "type": "module",
+  "scripts": {
+    "test": "vitest --config .config/vitest.ts",
+    "coverage": "vitest run --coverage --config .config/vitest.ts"
+  },
   "devDependencies": {
-    "@durak-game/durak-dts": "^0.5.1"
+    "@durak-game/durak-dts": "^0.5.1",
+    "@tsconfig/node22": "^22.0.0",
+    "@vitest/coverage-v8": "^3.0.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "vitest": "^3.0.2"
   }
 }
