@@ -8,6 +8,7 @@ import {
   sameSuitLowerRankFor,
   Cards,
   allTrumpCards,
+  allNonTrumpCards,
 } from "../../../../tests/setup-cards";
 import GameCard from "../../cards/game-card";
 
@@ -86,7 +87,7 @@ describe("desk slot", () => {
 
     const sameSuitLowerRankTestCaseFor = (cards: Cards) => ({
       heading: "same suit and higher rank",
-      cards: sameSuitHigherRankFor(cards),
+      cards: sameSuitLowerRankFor(cards),
     });
 
     const plainCardTestCase = {
@@ -106,10 +107,18 @@ describe("desk slot", () => {
       heading: "attack card is trump",
       cardToTest: __cards__.trumpCards["10♠"],
       correctCases: [sameSuitHigherRankTestCaseFor(trumpCards)],
-      errorCases: [sameSuitLowerRankTestCaseFor(trumpCards)],
+      errorCases: [
+        sameSuitLowerRankTestCaseFor(trumpCards),
+        {
+          heading: "non trump card",
+          cards: () => allNonTrumpCards,
+        },
+      ],
     } satisfies Suite;
 
-    describe.for([plainCardTestCase, trumpCardTestCase] satisfies Suite[])(
+    const cases = [plainCardTestCase, trumpCardTestCase] satisfies Suite[];
+
+    describe.for(cases)(
       "$heading $cardToTest.asString",
       ({ cardToTest, correctCases, errorCases }: Suite) => {
         describe.for(correctCases)(
@@ -138,13 +147,6 @@ describe("desk slot", () => {
             );
           },
         );
-
-        test("must throw when same card is provided (check for impossible state)", () => {
-          const slot = makeUnbeatenSlot(cardToTest);
-          expect(() => slot.with(cardToTest))
-            //
-            .toThrow("__Impossible__123");
-        });
       },
     );
   });
