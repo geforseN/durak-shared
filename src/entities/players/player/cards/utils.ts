@@ -1,5 +1,5 @@
 import { CardDTO } from "@durak-game/durak-dts";
-import GameCard from "../../cards/game-card";
+import GameCard from "../../../cards/game-card";
 
 export type CardLike = CardDTO | GameCard | `${CardDTO["rank"]}${CardDTO["suit"]}`
 

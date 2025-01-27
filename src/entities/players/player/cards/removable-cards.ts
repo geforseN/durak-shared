@@ -1,4 +1,4 @@
-import GameCard from "../../cards/game-card";
+import GameCard from "../../../cards/game-card";
 import { CardLike, __withCardRemove } from "./utils";
 import { PlayerCards } from "./cards";
 

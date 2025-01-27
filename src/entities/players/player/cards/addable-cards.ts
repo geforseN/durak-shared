@@ -1,4 +1,4 @@
-import GameCard from "../../cards/game-card";
+import GameCard from "../../../cards/game-card";
 import { PlayerCards } from "./cards";
 
 export class AddablePlayerCards {

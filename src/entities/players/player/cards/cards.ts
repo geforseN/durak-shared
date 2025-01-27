@@ -1,4 +1,4 @@
-import GameCard from "../../cards/game-card";
+import GameCard from "../../../cards/game-card";
 
 export class PlayerCards {
   readonly #values: readonly GameCard[];
