@@ -1,5 +1,5 @@
 import GameCard from "./cards/game-card";
-import type { CardLike } from "./player/cards/utils";
+import type { CardLike } from "./players/player/cards/utils";
 
 export interface IPlayer__ {
   x?: never;
