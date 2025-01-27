@@ -1,24 +1,7 @@
-import Players from "../__players/players";
-import type { GameEvent, IAllowed__, IGame } from "../players/__types";
-
-// eslint-disable-next-line no-restricted-syntax
-class __MegaPlayers extends Players {
-  get allowed() {
-    return {
-      perform(event: GameEvent): IGame {
-        // ENSURE PERSON ID
-        // ENSURE CAN DO SUCH THING, CHECK ROLE
-      },
-    };
-  }
-}
-
-interface IGamePlayers {
-  get allowed(): IAllowed__;
-}
+import type { GameEvent, IGame, IGamePlayers__ } from "../__types";
 
 export default class Game implements IGame<GameEvent> {
-  constructor(readonly players: IGamePlayers) {}
+  constructor(readonly players: IGamePlayers__) {}
 
   #ensureIsGameEvent(event: unknown): asserts event is GameEvent {
     if (
