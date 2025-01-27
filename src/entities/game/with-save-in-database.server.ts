@@ -1,4 +1,4 @@
-import type { GameEvent, IGame } from "../players/__types";
+import type { GameEvent, IGame } from "../__types";
 
 export class WithSaveInDatabase implements IGame<GameEvent> {
   constructor(private readonly _origin: IGame) {}
