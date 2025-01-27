@@ -1,4 +1,4 @@
-import { ranks } from "@durak-game/durak-dts";
+import { CardDTO, ranks } from "@durak-game/durak-dts";
 import WithPower from "../src/entities/cards/ranks/rank-with-power";
 import Rank from "../src/entities/cards/ranks/rank";
 import GameCard from "../src/entities/cards/game-card";
@@ -86,6 +86,14 @@ export class Cards<T extends GameCard = GameCard> {
 
   *[Symbol.iterator]() {
     yield* this.#values;
+  }
+
+  require(string: `${CardDTO["rank"]}${CardDTO["suit"]}`) {
+    const card = this.#values.find((card) => card.toString() === string);
+    if (!card) {
+      throw new Error(`Failed to find card by string="${string}"`);
+    }
+    return card;
   }
 
   withSuit(suit: T["suit"]): Cards {
